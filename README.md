@@ -7,7 +7,7 @@ Please complete as much of the assignment as you can in the allotted time. You d
 If you have any questions or notice something is not working (like the API, or any of the links in this document), please contact webdevs@carleton.ca.
 
 
-## Project requirements:
+## Project requirements
 
 
 * Only front-end code will be considered in this project: HTML5, CSS and Javascript.
@@ -26,7 +26,7 @@ If you have any questions or notice something is not working (like the API, or a
 * Create a README with clear instructions on how to run your project.
 * Send the link of the completed repo to webdevs@carleton.ca
 
-## Rating criteria:
+## Rating criteria
 
 * Loyalty to the requested layout;
 * Loyalty to requested features;
@@ -35,7 +35,7 @@ If you have any questions or notice something is not working (like the API, or a
 * CSS naming clarity;
 
 
-## Bonus points (How deep is your love?):
+## Bonus points (How deep is your love?)
 
 * Use of GitFlow for each step
 * Use of TypeScript
