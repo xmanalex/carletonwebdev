@@ -55,7 +55,7 @@ If you have any questions or notice something is not working (like the API, or a
 * Adapt the view to be Responsive (mobile/tablet)
 
 
-### TRIPLE Bonus Points
+## TRIPLE Bonus Points
 
 * Add creative extra features
 
