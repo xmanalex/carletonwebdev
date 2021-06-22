@@ -47,6 +47,18 @@ If you have any questions or notice something is not working (like the API, or a
 * Apply transition animations.
 
 
+## DOUBLE Bonus Points 
+
+* When searching, highlight the matched search characters (only what's matched) in the hero cards. 
+* Create a user customization option (e.g. dark mode / grid vs list view) 
+* Persist the data when the user reload the page
+* Adapt the view to be Responsive (mobile/tablet)
+
+
+### TRIPLE Bonus Points
+
+* Add creative extra features
+
 
 # Assessment
 
