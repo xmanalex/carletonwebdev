@@ -40,7 +40,7 @@ If you have any questions or notice something is not working (like the API, or a
 * Use of GitFlow for each step
 * Use of TypeScript
 * Test development;
-* Use of Clean Code Tequiniques
+* Use of Clean Code Techniques
 * Follow some Javascript style guide;
 * Follow some CSS style guide;
 * Componentization and extensibility of Javascript components;
