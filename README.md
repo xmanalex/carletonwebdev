@@ -1,125 +1,107 @@
-# Web Services Front-end Dev Test
+# This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework and don't mind using pre-1.0 software — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
 
-The goal of this assessment is to replicate the frontend application below (as close as possible). 
+---
 
-Please complete as much of the assignment as you can in the allotted time. You don’t need to save the older parts of the assignment – the assessment is designed so you build on top of the previous part.
+# svelte app
 
-If you have any questions or notice something is not working (like the API, or any of the links in this document), please contact webdevs@carleton.ca.
+This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
+To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
 
-## Project requirements
+```bash
+npx degit sveltejs/template svelte-app
+cd svelte-app
+```
 
-
-* Only front-end code will be considered in this project: HTML5, CSS and Javascript.
-* The project can be written in pure javascript or use frameworks like React, Vue.js or others.
-* CSS preprocessors can be used at will.
-* CSS frameworks are not allowed. All CSS code must be written by you.
-* Package managers and task runners can be used at will.
-
-
-## Submission Instructions
+*Note that you will need to have [Node.js](https://nodejs.org) installed.*
 
 
-* Create a fork of this repo.
-* Develop and version this project using git.
-* Commit your work often. We need to see progression through the steps.
-* Create a README with clear instructions on how to run your project.
-* Send the link of the completed repo to webdevs@carleton.ca
+## Get started
 
-## Rating criteria
+Install the dependencies...
 
-* Loyalty to the requested layout;
-* Loyalty to requested features;
-* Semantically structured HTML;
-* Accesbility (WCAG 2.0 AA)
-* CSS naming clarity;
+```bash
+cd svelte-app
+npm install
+```
 
+...then start [Rollup](https://rollupjs.org):
 
-## Bonus points (How deep is your love?)
+```bash
+npm run dev
+```
 
-* Use of GitFlow for each step
-* Use of TypeScript
-* Test development;
-* Use of Clean Code Techniques
-* Follow some Javascript style guide;
-* Follow some CSS style guide;
-* Componentization and extensibility of Javascript components;
-* Apply transition animations.
+Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
 
+By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
 
-## DOUBLE Bonus Points 
+If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
 
-* When searching, highlight the matched search characters (only what's matched) in the hero cards. 
-* Create a user customization option (e.g. dark mode / grid vs list view) 
-* Persist the data when the user reload the page
-* Adapt the view to be Responsive (mobile/tablet)
+## Building and running in production mode
+
+To create an optimised version of the app:
+
+```bash
+npm run build
+```
+
+You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
 
 
-## TRIPLE Bonus Points
+## Single-page app mode
 
-* Add creative extra features
+By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
 
+If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
 
-# Assessment
+```js
+"start": "sirv public --single"
+```
 
+## Using TypeScript
 
-## Part 1
+This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
 
-The first step of the assignment is to fetch data from this public JSON API, and present the information on the screen. The route to fetch the data is:
+```bash
+node scripts/setupTypeScript.js
+```
 
-https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json
+Or remove the script via:
 
+```bash
+rm scripts/setupTypeScript.js
+```
 
-You do not need any credentials to access the URL above. The goal of this part is to present the data as a list on the screen like below:
+If you want to use `baseUrl` or `path` aliases within your `tsconfig`, you need to set up `@rollup/plugin-alias` to tell Rollup to resolve the aliases. For more info, see [this StackOverflow question](https://stackoverflow.com/questions/63427935/setup-tsconfig-path-in-svelte).
 
-<img src='./images/01.png'/>
+## Deploying to the web
 
-Do not worry about formatting for this part. Just present the correct information given the API above on the screen.
+### With [Vercel](https://vercel.com)
 
-## Part 2
+Install `vercel` if you haven't already:
 
-The second step of the assignment is to style the data in the previous part using CSS. Replicate the style of the image below as best as you can.
+```bash
+npm install -g vercel
+```
 
-<img src='./images/02.png'/>
+Then, from within your project folder:
 
-***Note: The card list should scroll vertically.***
+```bash
+cd public
+vercel deploy --name my-project
+```
 
-If you are having difficulties replicating this part exactly and it is taking too long, move onto the next part. The future steps do not measure your ability to write CSS and HTML.
+### With [surge](https://surge.sh/)
 
+Install `surge` if you haven't already:
 
-## Part 3
-In this part, you are going to add a text input, where a user can filter the list of heroes by their name as you can see on the images below.
+```bash
+npm install -g surge
+```
 
-<img src='./images/03.png'/>
-<img src='./images/04.png'/>
+Then, from within your project folder:
 
-
-## Part 4
-
-In this part, you are going to make each hero have an expandable list view, so that you can view all of their powers stats. See the images below for what the view should look like when expanded. 
-
-<img src='./images/05.png'/>
-<img src='./images/06.png'/>
-
-
-## Part 5
-In this part, you will add a text field in the expanded view of each hero to add tags about the hero. Here is what it looks like (added a tag called “love”):
-
-<img src='./images/07.png'/>
-
-
-## Part 6
-**In this last part**, you will add a tag bar to filter hero based on tags. Do not be concerned with filtering both by name and tags at the same time. 
-
-The Image bellow shows only the Super Heroes with the tag ***"love"***
-<img src='./images/08.png'/>
-
-
-The Image bellow shows only the Super Heroes with the tag ***"hate"***
-
-<img src='./images/09.png'/>
-
-
-## References
-
-* https://akabab.github.io/superhero-api/api/
+```bash
+npm run build
+surge public my-project.surge.sh
+```

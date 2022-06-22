@@ -1,15 +1,14 @@
-<script>
-	export let name;
+<script lang="ts">
+    import SupeInfo from "./SupeInfo.svelte";
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+<SupeInfo />
 </main>
 
 <style>
 	main {
-		text-align: center;
+		text-align: left;
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
