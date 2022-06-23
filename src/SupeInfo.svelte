@@ -1,6 +1,7 @@
 <script lang="ts">
    import { onMount } from 'svelte';
    import Search from "./Search.svelte";
+   import Supe from "./Supe.svelte"
 
    let supeinfo = [];
 
