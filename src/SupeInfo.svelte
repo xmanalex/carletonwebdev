@@ -21,7 +21,7 @@
 
    <div class="outer_supe_display">
    <div class="inner_supe_cards_display">
-      <input type="search" bind:value={search} class="ms-auto w-auto" placeholder="Search" />
+      <input type="search" bind:value={search} id="search_element" class="ms-auto w-auto" placeholder="Search" />
    {#each visibleSupes as supe}
       <Supe {supe} />
    {/each}
@@ -50,5 +50,8 @@
       overflow: hidden;
       max-height: 900px;
       border-radius: 20px;
+   }
+   #search_element {
+      width: 100%;
    }
 </style>
