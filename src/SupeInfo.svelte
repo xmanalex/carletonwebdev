@@ -4,7 +4,7 @@
 
    let supeinfo = [];
 
-   let search = "Abraxas";
+   let search = "";
 
    onMount(async () => {
       const res = await fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json');
@@ -20,7 +20,7 @@
 <main>
 
    <div class="outer_supe_display">
-   <div id="cards_display">
+   <div class="inner_supe_cards_display">
       <input type="search" bind:value={search} class="ms-auto w-auto" placeholder="Search" />
    {#each visibleSupes as supe}
       <Supe {supe} />
@@ -31,7 +31,7 @@
 
 <style>
 
-   #cards_display {
+   .inner_supe_cards_display {
       background: #fff;
       border-radius: 20px;
       text-align: center;
