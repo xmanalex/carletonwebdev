@@ -12,24 +12,17 @@
 <main>
    <div id="cards_display">
    {#each supeinfo as supe}
-      <div class="supe_card_container">
-         <div class="card_row">
-            <div class="card_column">
-               <img src="{supe.images.sm}" alt="Image of {supe.name}"/></div>
-            <div class="card_column">
-               <div class="supe_card_content">
-               <h1>{supe.name}</h1>
-               <p>Fullname: {supe.biography.fullname}</p>
-               <p>Race: {supe.appearance.race}</p>
-               <p>Alignment: {supe.biography.alignment}</p>
-               <p>Publisher: {supe.biography.publisher}</p>
-            </div></div>
+      <div class="supe_flex_box" >
+         <div>
+            <img src="{supe.images.sm}" alt="Image of {supe.name}"/>
          </div>
-
-         <div class="supe_card_media">
-            <img src="{supe.images.sm}"/>
+         <div class="supe_card_content">
+            <h1>{supe.name}</h1>
+            <p>Fullname: {supe.biography.fullName}</p>
+            <p>Race: {supe.appearance.race}</p>
+            <p>Alignment: {supe.biography.alignment}</p>
+            <p>Publisher: {supe.biography.publisher}</p>
          </div>
-
       </div>
    {/each}
    </div>
@@ -40,42 +33,36 @@
       background: #fff;
       border-radius: 20px;
       text-align: center;
-      padding: 1em;
-      max-width: 400px;
+      max-width: 500px;
       margin: 0 auto;
+      padding: 1em;
    }
 
    .supe_card_container {
-      width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      max-height: 180px;
+      width: 500px;
+      border-radius: 10px;
+      text-align: left;
+      /*margin-bottom: 1em;*/
+      /*padding: 5px 5px 5px 0px;*/
    }
-
-   .supe_card_media {
-      max-width: 50%;
-      position: relative;
-   }
-
    .supe_card_content {
-
-   }
-
-   .card_row {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: 100%;
-   }
-
-   .card_column {
-      display: flex;
-      flex-direction: column;
-      flex-basis: 100%;
-      flex: 1;
+      /*margin-left: 10px;*/
+      max-height: 100px;
+      text-align: left;
+      border: 1px #666666;
+      border-radius: 20px;
    }
 
    img {
-      border-radius: 5px 5px  5px 5px;
-      width: 100px;
+      height: 90%;
+      border-radius: 10px 0px 0px 10px;
+      /*max-width: 50%;*/
+      /*max-height: 70%;*/
+   }
+   .supe_flex_box {
+      display: flex;
+      flex-direction: row;
+      height: 250px;
    }
 </style>
