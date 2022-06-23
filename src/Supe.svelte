@@ -1,11 +1,16 @@
 <script lang="ts">
     export let supe;
+    import {show_power_stats} from "./stores.js"
+    $: console.log($show_power_stats)
+    const show_powerstats = (id) => {
+        $show_power_stats = [...$show_power_stats, id]
+    }
 </script>
 
 <main>
     <div class="supe_flex_box" >
         <div id="supe_image">
-            <img src="{supe.images.sm}" alt="Image of {supe.name}"/>
+            <img src="{supe.images.sm}" alt="Image of {supe.name}"  width="150"/>
         </div>
         <div id="supe_general_info" class="supe_card_content">
             <div class="supe_general_info_spacer">
@@ -16,7 +21,7 @@
             <p>Publisher: {supe.biography.publisher}</p>
             </div>
         </div>
-        <div id="supe_stats_button" class="btn">+</div>
+        <div id="supe_stats_button" on:click={() => show_powerstats(supe.id)} class="btn">+</div>
     </div>
 </main>
 
@@ -25,7 +30,8 @@
         display: flex;
         flex-direction: row;
         /*justify-content: center;*/
-
+        max-width: 600px;
+        width:600px;
     }
 
     .supe_flex_box > #supe_image {
