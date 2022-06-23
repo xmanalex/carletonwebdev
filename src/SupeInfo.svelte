@@ -1,18 +1,28 @@
 <script lang="ts">
    import { onMount } from 'svelte';
+   import Search from "./Search.svelte";
 
    let supeinfo = [];
+
+   let search = "Abraxas";
 
    onMount(async () => {
       const res = await fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json');
       supeinfo = await res.json();
    });
+
+   $: visibleSupes = search ?
+           supeinfo.filter(supe => {
+              return supe.name.match(`${search}.*`)
+           }) : supeinfo;
 </script>
 
 <main>
+
    <div class="outer_supe_display">
    <div id="cards_display">
-   {#each supeinfo as supe}
+      <input type="search" bind:value={search} class="ms-auto w-auto" placeholder="Search" />
+   {#each visibleSupes as supe}
       <div class="supe_flex_box" >
          <div>
             <img src="{supe.images.sm}" alt="Image of {supe.name}"/>
@@ -39,7 +49,7 @@
       max-width: 500px;
       margin: 0 auto;
       padding: 1em;
-      overflow: auto;
+      overflow-y: auto;
       max-height: 900px;
    }
    .outer_supe_display {
