@@ -1,6 +1,7 @@
 <script lang="ts">
    import { onMount } from 'svelte';
    import Supe from "./Supe.svelte"
+   import {show_power_stats} from "./stores.js"
 
    let supeinfo = [];
 
@@ -22,9 +23,13 @@
    <div class="outer_supe_display">
    <div class="inner_supe_cards_display">
       <input type="search" bind:value={search} id="search_element" class="ms-auto w-auto" placeholder="Search" />
-   {#each visibleSupes as supe}
-      <Supe {supe} />
-   {/each}
+      {#each visibleSupes as supe}
+         {#if $show_power_stats.includes(supe.id)}
+         <Supe {supe} />
+            {:else }
+         <Supe {supe} />
+         {/if}
+      {/each}
    </div>
    </div>
 </main>
