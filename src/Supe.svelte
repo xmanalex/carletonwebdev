@@ -16,7 +16,7 @@
             <p>Publisher: {supe.biography.publisher}</p>
             </div>
         </div>
-        <span>+</span>
+        <div id="supe_stats_button" class="btn">+</div>
     </div>
 </main>
 
@@ -72,5 +72,20 @@
         border-radius: 10px 0px 0px 10px;
         /*max-width: 50%;*/
         /*max-height: 70%;*/
+    }
+
+    #supe_stats_button {
+        position: relative;
+        right:30px;
+
+    }
+    .btn {
+        height: 30px;
+        line-height: 30px;
+        width: 30px;
+        font-size: 1.5em;
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
     }
 </style>
