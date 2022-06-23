@@ -12,7 +12,7 @@
         <div id="supe_image">
             <img src="{supe.images.sm}" alt="Image of {supe.name}"  width="150"/>
         </div>
-        <div id="supe_general_info" class="supe_card_content">
+        <div id="supe_general_info" class="supe_card_content_{supe.biography.alignment}">
             <div class="supe_general_info_spacer">
             <h1>{supe.name}</h1>
             <p>Fullname: {supe.biography.fullName}</p>
@@ -60,10 +60,17 @@
         font-size: 12px;
         max-height: 220px;
     }
-    .supe_card_content {
+    .supe_card_content_good {
         text-align: left;
         border: 1px #666666;
         border-radius: 20px;
+        color: blue;
+    }
+    .supe_card_content_bad {
+        text-align: left;
+        border: 1px #666666;
+        border-radius: 20px;
+        color: crimson;
     }
 
     .supe_general_info_spacer {
