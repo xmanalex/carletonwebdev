@@ -1,7 +1,6 @@
 <script lang="ts">
     export let supe;
     import {show_power_stats} from "./stores.js"
-    $: console.log($show_power_stats)
     const show_powerstats = (id) => {
         $show_power_stats = [...$show_power_stats, id]
     }
