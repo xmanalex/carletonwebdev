@@ -1,8 +1,8 @@
 <script lang="ts">
     export let supe;
-    let add_tag:string;
-    import {show_power_stats} from "./stores.js"
-    $: console.log($show_power_stats)
+    import {show_power_stats, social_tags} from "./stores.js"
+    $: console.log($social_tags)
+
     const show_powerstats = (id) => {
         for( var i = 0; i <  $show_power_stats.length; i++) {
 
@@ -12,6 +12,15 @@
         }
         $show_power_stats =  $show_power_stats;
     }
+
+    const add_supe_tag = () => {
+        let a_tag_value:string = document.getElementById("add_tag_element").value;
+        $social_tags = [...$social_tags, a_tag_value];
+        //clear value from tag input
+        document.getElementById("add_tag_element").value = ""
+    }
+
+
 </script>
 
 <main>
@@ -38,7 +47,12 @@
             </div>
             <div class="supe_general_info_spacer">
                 <h2>Tags:</h2>
-                <input type="search" bind:value={add_tag} id="add_tag_element" class="" placeholder="Add tag" /><button>Add Tag</button>
+                <input type="search"  id="add_tag_element" placeholder="Add tag" /><button on:click={() => add_supe_tag()}>Add Tag</button>
+            </div>
+            <div class="supe_general_info_spacer">
+                {#each $social_tags as tag }
+                    <button>{tag}</button>
+                {/each}
             </div>
         </div>
         <div id="supe_stats_button" on:click={() => show_powerstats(supe.id)} class="btn">+</div>
@@ -49,7 +63,6 @@
     .supe_flex_box {
         display: flex;
         flex-direction: row;
-        /*justify-content: center;*/
         max-width: 600px;
         width:700px;
         height: 420px;
@@ -67,7 +80,7 @@
         font-size: 12px;
         width: 300px;
         max-width: 300px;
-        height: 270px;
+        height: 378px;
         border: 1px solid lightgrey;
         border-left-style: none;
         box-sizing: border-box;

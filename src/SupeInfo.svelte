@@ -2,7 +2,7 @@
    import { onMount } from 'svelte';
    import Supe from "./Supe.svelte"
    import SupeStats from "./SupeStats.svelte"
-   import {show_power_stats} from "./stores.js"
+   import {show_power_stats, social_tags} from "./stores.js"
 
    let supeinfo = [];
 
@@ -24,6 +24,11 @@
    <div class="outer_supe_display">
    <div class="inner_supe_cards_display">
       <input type="search" bind:value={search} id="search_element" class="ms-auto w-auto" placeholder="Search" />
+      <div class="supe_tag">
+         {#each $social_tags as tag }
+            <button>{tag}</button>
+         {/each}
+      </div>
       {#each visibleSupes as supe}
          {#if $show_power_stats.includes(supe.id)}
          <SupeStats {supe} />
@@ -59,5 +64,8 @@
    }
    #search_element {
       width: 100%;
+   }
+   .supe_tag {
+      text-align: left;
    }
 </style>
