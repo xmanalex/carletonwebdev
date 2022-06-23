@@ -10,6 +10,7 @@
 </script>
 
 <main>
+   <div class="outer_supe_display">
    <div id="cards_display">
    {#each supeinfo as supe}
       <div class="supe_flex_box" >
@@ -26,9 +27,11 @@
       </div>
    {/each}
    </div>
+   </div>
 </main>
 
 <style>
+
    #cards_display {
       background: #fff;
       border-radius: 20px;
@@ -36,6 +39,18 @@
       max-width: 500px;
       margin: 0 auto;
       padding: 1em;
+      overflow: auto;
+      max-height: 900px;
+   }
+   .outer_supe_display {
+      background: #fff;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 1em;
+      overflow: hidden;
+      max-height: 900px;
+      border-radius: 20px;
    }
 
    .supe_card_container {
