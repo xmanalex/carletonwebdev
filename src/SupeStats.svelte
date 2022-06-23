@@ -1,5 +1,6 @@
 <script lang="ts">
     export let supe;
+    let add_tag:string;
     import {show_power_stats} from "./stores.js"
     $: console.log($show_power_stats)
     const show_powerstats = (id) => {
@@ -35,6 +36,10 @@
             <p>Power: {supe.powerstats.durability}%</p>
             <p>Combat: {supe.powerstats.combat}%</p>
             </div>
+            <div class="supe_general_info_spacer">
+                <h2>Tags:</h2>
+                <input type="search" bind:value={add_tag} id="add_tag_element" class="" placeholder="Add tag" /><button>Add Tag</button>
+            </div>
         </div>
         <div id="supe_stats_button" on:click={() => show_powerstats(supe.id)} class="btn">+</div>
     </div>
@@ -46,12 +51,12 @@
         flex-direction: row;
         /*justify-content: center;*/
         max-width: 600px;
-        width:600px;
-        height: 300px;
+        width:700px;
+        height: 420px;
     }
 
     .supe_flex_box > #supe_image {
-        max-height: 500px;
+        max-height: 700px;
         max-width: 200px;
     }
 
