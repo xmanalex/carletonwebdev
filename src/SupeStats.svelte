@@ -1,7 +1,7 @@
 <script lang="ts">
     export let supe;
-    import {show_power_stats, social_tags} from "./stores.js"
-    $: console.log($social_tags)
+    import {show_power_stats, social_tags, supe_tags} from "./stores.js"
+    $: console.log($supe_tags)
 
     const show_powerstats = (id) => {
         for( var i = 0; i <  $show_power_stats.length; i++) {
@@ -20,6 +20,15 @@
         document.getElementById("add_tag_element").value = ""
     }
 
+    const tag_supe_hero = (tag,id) => {
+        $supe_tags = [  ...$supe_tags,
+            {id: id,
+            tag: tag,}
+        ]
+        // $supe_tags.push({ id: id, tag: tag,})
+        // $supe_tags = $supe_tags;
+        console.log(tag,id)
+    }
 
 </script>
 
@@ -51,7 +60,7 @@
             </div>
             <div class="supe_general_info_spacer">
                 {#each $social_tags as tag }
-                    <button>{tag}</button>
+                    <button on:click={tag_supe_hero(tag,supe.id)}>{tag}</button>
                 {/each}
             </div>
         </div>
