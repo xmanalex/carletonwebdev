@@ -27,9 +27,12 @@
       background: #fff;
       border-radius: 20px;
       border:1px solid black;
-      text-align: left;
+      text-align: center;
       padding: 1em;
       max-width: 400px;
       margin: 0 auto;
+   }
+   img {
+      border-radius: 5px 5px  5px 5px;
    }
 </style>
