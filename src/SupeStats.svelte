@@ -20,16 +20,12 @@
         document.getElementById("add_tag_element").value = ""
     }
 
-    const tag_supe_hero = (tag,id) => {
+    const tag_supe_hero = (tag,name) => {
         $supe_tags = [  ...$supe_tags,
-            {id: id,
+            {name: name,
             tag: tag,}
         ]
-        // $supe_tags.push({ id: id, tag: tag,})
-        // $supe_tags = $supe_tags;
-        console.log(tag,id)
     }
-
 </script>
 
 <main>
@@ -60,7 +56,7 @@
             </div>
             <div class="supe_general_info_spacer">
                 {#each $social_tags as tag }
-                    <button on:click={tag_supe_hero(tag,supe.id)}>{tag}</button>
+                    <button on:click={tag_supe_hero(tag,supe.name)}>{tag}</button>
                 {/each}
             </div>
         </div>

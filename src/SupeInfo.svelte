@@ -2,31 +2,47 @@
    import { onMount } from 'svelte';
    import Supe from "./Supe.svelte"
    import SupeStats from "./SupeStats.svelte"
-   import {show_power_stats, social_tags} from "./stores.js"
+   import {show_power_stats, social_tags,supe_tags} from "./stores.js"
 
    let supeinfo = [];
-
    let search = "";
 
+   //get remote data
    onMount(async () => {
       const res = await fetch('https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/all.json');
       supeinfo = await res.json();
    });
 
+   //search with filter for Supe names
    $: visibleSupes = search ?
            supeinfo.filter(supe => {
               return supe.name.match(`${search}.*`)
            }) : supeinfo;
+
+   //filter supes by tag
+   const filterHero = (filter) => {
+      //find all supe names that have the tag filter request
+
+      let test = $supe_tags.filter(supe => {
+         return supe.tag.match("love")
+      })
+      console.log(test);
+
+      // let mysmartvariable = supeinfo.filter(supe => {
+      //    return supe.name.match(`${search}.*`)
+      // })
+      // console.log(mysmartvariable);
+   }
+
 </script>
 
 <main>
-
    <div class="outer_supe_display">
    <div class="inner_supe_cards_display">
-      <input type="search" bind:value={search} id="search_element" class="ms-auto w-auto" placeholder="Search" />
+      <input type="search" bind:value={search} id="search_element" placeholder="Search" />
       <div class="supe_tag">
          {#each $social_tags as tag }
-            <button>{tag}</button>
+            <button on:click={filterHero(tag)}>{tag}</button>
          {/each}
       </div>
       {#each visibleSupes as supe}
