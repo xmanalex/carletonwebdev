@@ -4,3 +4,6 @@ export const show_power_stats = writable([])
 export const social_tags = writable([])
 
 
+// const tags = writable({
+//
+// })
