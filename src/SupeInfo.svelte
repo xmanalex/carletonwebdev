@@ -10,6 +10,7 @@
 </script>
 
 <main>
+   <div id="cards_display">
    {#each supeinfo as supe}
       <img src="{supe.images.sm}"/>
       <h1>{supe.name}</h1>
@@ -18,8 +19,17 @@
       <p>Alignment: {supe.biography.alignment}</p>
       <p>Publisher: {supe.biography.publisher}</p>
    {/each}
+   </div>
 </main>
 
 <style>
-
+   #cards_display {
+      background: #fff;
+      border-radius: 20px;
+      border:1px solid black;
+      text-align: left;
+      padding: 1em;
+      max-width: 400px;
+      margin: 0 auto;
+   }
 </style>
