@@ -1,4 +1,4 @@
-Superhero app Part 1 
+Superhero App Parts 1, 2, 3, 4,5 6 
 
 This is a demo for a work presentation for Carleton University.
 ```bash
